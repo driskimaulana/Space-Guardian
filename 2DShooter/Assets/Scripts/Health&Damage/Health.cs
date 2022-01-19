@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 /// <summary>
 /// This class handles the health state of a game object.
@@ -34,6 +35,8 @@ public class Health : MonoBehaviour
     [Tooltip("The maximum number of lives this health can have")]
     public int maximumLives = 5;
 
+    public HealthBar healthBar;
+
     /// <summary>
     /// Description:
     /// Standard unity funciton called before the first frame update
@@ -45,6 +48,11 @@ public class Health : MonoBehaviour
     void Start()
     {
         SetRespawnPoint(transform.position);
+        if(healthBar != null)
+        {
+            healthBar.SetMaxHealth(maximumHealth);
+
+        }
     }
 
     /// <summary>
@@ -110,6 +118,10 @@ public class Health : MonoBehaviour
     {
         transform.position = respawnPosition;
         currentHealth = defaultHealth;
+        if(healthBar != null)
+        {
+            healthBar.SetHealth(currentHealth);
+        }
     }
 
     /// <summary>
@@ -136,6 +148,10 @@ public class Health : MonoBehaviour
             timeToBecomeDamagableAgain = Time.time + invincibilityTime;
             isInvincableFromDamage = true;
             currentHealth -= damageAmount;
+            if(healthBar != null)
+            {
+                healthBar.SetHealth(currentHealth);
+            }
             CheckDeath();
         }
     }
