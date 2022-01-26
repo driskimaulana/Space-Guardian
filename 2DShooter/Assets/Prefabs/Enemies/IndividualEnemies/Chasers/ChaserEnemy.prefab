@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 111767558614867184}
   - component: {fileID: 111767558614867191}
-  - component: {fileID: 111767558614867190}
   - component: {fileID: 111767558614867185}
   - component: {fileID: 2029536735206158367}
   - component: {fileID: 5724781533654324104}
@@ -32,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 111767558614867189}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.7095091, y: 1.1499779, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 7.651524, y: 7.651524, z: 7.651524}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -77,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4760475040570215109, guid: f33c91ee715a39d448ef7f030babf230, type: 3}
+  m_Sprite: {fileID: 4958709792872695805, guid: 56d39d9c4039a7d44b9d2bac13761872, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -88,25 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &111767558614867190
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111767558614867189}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3f1e51d4d089f63448c5c9b3fc60a5cc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &111767558614867185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,8 +104,7 @@ MonoBehaviour:
   followTarget: {fileID: 0}
   followRange: 100
   guns: []
-  spawner: {fileID: 0}
-  shootMode: 1
+  shootMode: 0
   movementMode: 1
   scrollDirection: {x: 1, y: 0, z: 0}
 --- !u!114 &2029536735206158367
@@ -145,10 +124,11 @@ MonoBehaviour:
   maximumHealth: 3
   currentHealth: 3
   invincibilityTime: 0
+  isAlwaysInvincible: 0
   useLives: 0
   currentLives: 3
   maximumLives: 5
-  isInvincible: 0
+  healthBar: {fileID: 0}
   deathEffect: {fileID: 2452382815751308013, guid: 990f3751046a4d840806774f23579fe2, type: 3}
   hitEffect: {fileID: 6229913163069739088, guid: d6029318d740811488fd5dd38a7e1ce1, type: 3}
 --- !u!50 &5724781533654324104
@@ -189,7 +169,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.84375, y: 1.40625}
+    oldSize: {x: 0.23, y: 0.21}
     newSize: {x: 1.4375, y: 1.09375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -197,16 +177,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.16130829, y: 0.12978101}
-      - {x: 0.012701035, y: 0.28160596}
-      - {x: -0.34115005, y: -0.059082747}
-      - {x: -0.40575767, y: -0.14720798}
-      - {x: -0.4037702, y: -0.32103515}
-      - {x: -0.20872998, y: -0.50160956}
-      - {x: -0.0028514862, y: -0.7061174}
-      - {x: 0.42988372, y: -0.28435397}
-      - {x: 0.4241488, y: -0.2099626}
-      - {x: 0.41498256, y: -0.10467315}
+    - - {x: -0.114999995, y: 0.105}
+      - {x: -0.114999995, y: 0.015}
+      - {x: -0.055, y: -0.105}
+      - {x: 0.055, y: -0.105}
+      - {x: 0.114999995, y: 0.015}
+      - {x: 0.114999995, y: 0.105}
 --- !u!114 &4413798097735496473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,7 +196,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamId: 1
-  damageAmount: 10
+  damageAmount: 3
+  hitEffect: {fileID: 0}
   destroyAfterDamage: 1
   dealDamageOnTriggerEnter: 1
   dealDamageOnTriggerStay: 0

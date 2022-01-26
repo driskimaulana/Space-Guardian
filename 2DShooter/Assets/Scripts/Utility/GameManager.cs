@@ -21,6 +21,22 @@ public class GameManager : MonoBehaviour
     [Tooltip("The player gameobject")]
     public GameObject player = null;
 
+    public GameObject portal = null;
+
+    public bool isPortalMode = false;
+ 
+    public static int healthRemain
+    {
+        get
+        {
+            return instance.player.GetComponent<Health>().currentLives;
+        }
+        set
+        {
+            instance.player.GetComponent<Health>().currentLives = value;
+        }
+    }
+
     [Header("Scores")]
     // The current player score in the game
     [Tooltip("The player's score")]
@@ -210,6 +226,8 @@ public class GameManager : MonoBehaviour
         ResetScore();
     }
 
+    
+
     /// <summary>
     /// Description:
     /// Adds a number to the player's score stored in the gameManager
@@ -228,6 +246,8 @@ public class GameManager : MonoBehaviour
         }
         UpdateUIElements();
     }
+
+
     
     /// <summary>
     /// Description:
