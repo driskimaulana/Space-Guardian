@@ -6,8 +6,9 @@ This project aim is to create space shooter game.
 https://driskimaulana.itch.io/sky-wars
 
 **Project Result**
-
+![alt text](https://github.com/driskimaulana/2DShooter/blob/main/2DShooter/ScreenShots/MainMenu.png)
 ![alt text](https://github.com/driskimaulana/2DShooter/blob/main/2DShooter/ScreenShots/GamePlay1.png)
+![alt text](https://github.com/driskimaulana/2DShooter/blob/main/2DShooter/ScreenShots/GamePlay2.png)
 
 **Credits**
 <br>
